@@ -1,0 +1,27 @@
+<div class="container mt-3" *ngIf="annonces" >
+    <div class="row">
+        <div class="card mb-3 m-1 col-md-3" *ngFor="let an of annonces">
+            <h3 class="card-header">Annonces</h3>
+            <div class="card-body">
+              <h5 class="card-title">Annonce {{an.idAnnounce}}</h5>
+              <h6 class="card-subtitle text-muted">{{an.typeAnnounce}}</h6>
+            </div>
+            <img style="height: 100%; width: 100%;" src="{{an.image}}">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Date: {{an.date | date}}</li>
+              <li class="list-group-item">Date Debut: {{an.startDate}}</li>
+              <li class="list-group-item">Date Fin: {{an.endDate}}</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a> 
+              <a href="#" class="card-link">Another link</a>
+            </div>
+            <div class="card-footer text-muted">
+              2 days ago
+            </div>
+          </div>
+    </div>
+</div>
