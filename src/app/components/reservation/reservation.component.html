@@ -1,0 +1,28 @@
+<div class="container mt-3" *ngIf="reservations" >
+    <div class="row">
+        <div class="card mb-3 m-1 col-md-3" *ngFor="let res of reservations">
+            <h3 class="card-header">Reservations</h3>
+            <div class="card-body">
+              <h5 class="card-title">Annonce {{res.idReservation}}</h5>
+              <h6 class="card-subtitle text-muted">{{res.typeReservation}}</h6>
+            </div>
+            <img style="height: 100%; width: 100%;" src="{{res.image}}">
+            <div class="card-body">
+              <p class="card-text">Description: {{res.description}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Date de la reservation: {{res.date | date : 'MMM d, y'}}</li>
+              <li class="list-group-item">Date Debut: {{res.startDate | date : 'MMM d, y'}}</li>
+              <li class="list-group-item">Date Fin: {{res.endDate | date : 'MMM d, y'}}</li>
+              <li class="list-group-item">Prix:{{res.price}}€/jour</li>
+            </ul>
+            <div class="card-body">
+        
+            </div>
+            <div class="card-footer text-muted">
+              2 days ago
+            </div>
+          </div>
+    </div>
+</div>
+

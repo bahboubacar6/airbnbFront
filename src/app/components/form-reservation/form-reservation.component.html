@@ -1,0 +1,48 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col col-md-6">
+            <div class="card mb-3 m-1">
+                <h3 class="card-header">Detail de l'annonce</h3>
+                <div class="card-body">
+                  <h5 class="card-title">Annonce {{announce.idAnnounce}}</h5>
+                  <h6 class="card-subtitle text-muted">{{announce.typeAnnounce}}</h6>
+                </div>
+                <img style="height: 100%; width: 100%;" src="{{announce.image}}">
+                <div class="card-body">
+                  <p class="card-text">Description: {{announce.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Date de mise en ligne: {{announce.date | date : 'MMM d, y'}}</li>
+                  <li class="list-group-item">Date Debut: {{announce.startDate | date : 'MMM d, y'}}</li>
+                  <li class="list-group-item">Date Fin: {{announce.endDate | date : 'MMM d, y'}}</li>
+                  <li class="list-group-item">Prix:{{announce.price}}€/jour</li>
+                </ul>
+                <div class="card-body">
+                  
+                </div>
+                <div class="card-footer text-muted">
+                  2 days ago
+                </div>
+              </div>
+        </div>
+        
+        <div class="col col-md-6">
+          <div class="card">
+            <div class="card-header">Choisir vos dates de reservation</div>
+            <div class="card-body">
+                <form [formGroup]="reservationFormGroup" (ngSubmit)="addResrUser(announce)">
+                    <div class="form-group mb-3">
+                        <label>Date du debut de la reservation:</label>
+                        <input type="date" formControlName="startDate">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Date du fin de la reservation:</label>
+                        <input type="date" formControlName="endDate">
+                    </div>
+                    <button class="btn btn-success" >Reserver</button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

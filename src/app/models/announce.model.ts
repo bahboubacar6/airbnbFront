@@ -10,5 +10,7 @@ export interface Announce{
     date: Date;
     startDate: Date;
     endDate: Date;
-    image: string
+    image: string;
+    price: number;
+    description: string
 }

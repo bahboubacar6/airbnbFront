@@ -8,11 +8,15 @@ import { Announce } from '../models/announce.model';
 })
 export class AnnounceService {
 
+  host: string="http://localhost:8081/announces/";
+
   constructor(private http: HttpClient) { 
 
   }
 
   public getAnnonces(): Observable<Announce[]>{
-    return this.http.get<Announce[]>("http://localhost:8081/announces/all");
+    return this.http.get<Announce[]>(this.host + "all");
   }
+
+
 }
